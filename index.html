@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="header">
+      <span class="icon">🔐</span>
+      <h1>Password Generator</h1>
+      <p>Create strong, secure passwords instantly</p>
+    </div>
+
+    <div class="output-box">
+      <span id="passwordDisplay" class="password-text">Click Generate</span>
+      <div class="output-actions">
+        <button id="toggleBtn" title="Show/Hide" aria-label="Toggle visibility">👁️</button>
+        <button id="copyBtn" title="Copy" aria-label="Copy password">📋</button>
+      </div>
+    </div>
+
+    <div class="strength-bar-wrap">
+      <div class="strength-bar">
+        <div id="strengthFill" class="strength-fill"></div>
+      </div>
+      <span id="strengthLabel" class="strength-label">—</span>
+    </div>
+
+    <div class="controls">
+      <label class="range-label">
+        Length: <strong id="lengthVal">16</strong>
+        <input type="range" id="lengthRange" min="6" max="32" value="16" />
+      </label>
+
+      <div class="checkboxes">
+        <label><input type="checkbox" id="chkUpper" checked /> Uppercase (A–Z)</label>
+        <label><input type="checkbox" id="chkLower" checked /> Lowercase (a–z)</label>
+        <label><input type="checkbox" id="chkNumbers" checked /> Numbers (0–9)</label>
+        <label><input type="checkbox" id="chkSymbols" checked /> Symbols (!@#$)</label>
+      </div>
+    </div>
+
+    <button id="generateBtn" class="btn-primary">Generate Password</button>
+    <div id="toast" class="toast hidden">✅ Copied to clipboard!</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
