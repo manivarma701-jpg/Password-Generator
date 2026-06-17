@@ -1,0 +1,59 @@
+/* React App.css — Password Generator with animations */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+.bg {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  animation: bgShift 12s ease-in-out infinite alternate;
+}
+@keyframes bgShift {
+  to { background: linear-gradient(135deg, #f093fb, #4facfe); }
+}
+.card {
+  background: rgba(255,255,255,0.95); padding: 35px;
+  border-radius: 18px; width: 420px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+.slide-up { animation: slideUp 0.6s cubic-bezier(0.34,1.56,0.64,1); }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(60px) scale(0.9); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+h1 { text-align: center; color: #333; margin-bottom: 20px; }
+label { display: block; margin: 14px 0 6px; color: #555; font-weight: 600; }
+input[type=range] { width: 100%; accent-color: #764ba2; }
+.chips { display: flex; gap: 10px; margin: 12px 0; }
+.chip {
+  background: #f3f4ff; padding: 8px 14px; border-radius: 20px;
+  cursor: pointer; transition: all 0.25s; user-select: none;
+  border: 2px solid transparent;
+}
+.chip:hover { transform: translateY(-2px); }
+.chip.on { border-color: #764ba2; background: #ede4ff; color: #764ba2; font-weight: bold; }
+.output {
+  background: #1a1a2e; color: #00ff88; padding: 16px; border-radius: 10px;
+  font-family: 'Courier New', monospace; font-size: 16px;
+  margin: 18px 0; word-break: break-all; min-height: 50px;
+}
+.pulse { animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 0 rgba(0,255,136,0.5); }
+  50%     { box-shadow: 0 0 20px rgba(0,255,136,0.5); }
+}
+.shake { animation: shake 0.5s; }
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+.bar-wrap { height: 8px; background: #eee; border-radius: 4px; overflow: hidden; }
+.bar { height: 100%; transition: width 0.6s, background 0.4s; }
+.lbl { text-align: center; margin-top: 6px; font-weight: bold; }
+.btn {
+  width: 100%; padding: 13px; margin-top: 10px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white; border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 600; cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(118,75,162,0.4); }
+.copy { background: linear-gradient(135deg, #4facfe, #00f2fe); }
